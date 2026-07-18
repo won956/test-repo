@@ -1,25 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    // Please write your code here.
-
+    // 변수 선언 및 입력
     int n;
     scanf("%d", &n);
 
-    for(int i = 0; i < 2 * n - 1; i++) {
-        int count;
-
-        if(i < n) {
-            count = i + 1;
-        } else {
-            count = 2 * n - 1 - i;
-        }
-
-        for(int j = 0; j < count; j++) {
+    // 길이가 n인 직각삼각형을 출력합니다.
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j <= i; j++)
             printf("*");
-
-        }
         printf("\n\n");
     }
+    
+    // 길이가 n-1인 직각삼각형을 뒤집어 출력합니다.
+    for(int i = n-2; i >= 0; i--) {
+        for(int j = 0; j <= i; j++)
+            printf("*");
+        printf("\n\n");
+    }
+
     return 0;
 }
